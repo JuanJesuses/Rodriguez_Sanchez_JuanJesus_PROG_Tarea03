@@ -18,6 +18,7 @@ public class Rey {
 			case NEGRO:
 				posicion = new Posicion(8, 'e');
 				break;
+				
 		}			
 	}
 	
@@ -25,6 +26,18 @@ public class Rey {
 		
 		color = Color.BLANCO;
 		posicion = new Posicion(1, 'e');
+		
+	}
+	
+	public Color getColor() {
+		
+		return color;
+		
+	}
+	
+	public Posicion getPosicion() {
+		
+		return posicion;
 		
 	}
 	
