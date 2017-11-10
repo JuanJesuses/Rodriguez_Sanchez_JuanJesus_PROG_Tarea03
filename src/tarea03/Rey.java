@@ -21,4 +21,11 @@ public class Rey {
 		}			
 	}
 	
+	public Rey (){
+		
+		color = Color.BLANCO;
+		posicion = new Posicion(1, 'e');
+		
+	}
+	
 }
