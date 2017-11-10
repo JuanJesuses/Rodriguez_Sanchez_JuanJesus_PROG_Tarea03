@@ -47,4 +47,18 @@ public class Rey {
 		
 	}
 	
+	public void mueve(int fila, char columna) {
+		
+		while((fila < 1 || fila > 8) && (columna < 97 || columna > 104)) {
+		
+			System.out.println("Los parámetros introducidos están fuera del rango establecido.");
+			System.out.print("El valor para la fila debe estar comprendido entre 1 y 8.");
+			System.out.println("El valor para la columna debe estar comprendido entre \'a' y \'h'.");
+			
+		}
+		
+		posicion = new Posicion(fila, columna);
+		
+	}
+	
 }
