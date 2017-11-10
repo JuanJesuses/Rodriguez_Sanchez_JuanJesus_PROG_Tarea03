@@ -20,7 +20,56 @@ public class Posicion {
 			this.columna = 'a';
 			
 		}
+	}
+		
+	public void setFila(int fila) {
+			
+		if(fila >= 1 && fila <= 10) {
+				
+			this.fila = fila;
+				
+		}else {
+				
+			System.out.printf("Error, ha introducido valores no válidos o fuera del rango");
+			System.out.printf("Se establecerá el valor \"1\".");
+			this.fila = 1;
+				
+		}
+			
+	}
+		
+	public void setColumna(char columna) {
+		
+		if (columna >= 97 && columna <= 104) {
+				
+			this.columna = columna;
+				
+		}else {
+				
+			System.out.printf("Error, ha introducido valores no válidos o fuera del rango");
+			System.out.printf("Se establecerá el valor \"a\".");
+			this.columna = 'a';
+				
+		}
+			
+	}
+		
+	public int getFila() {
+			
+		return fila;
+			
+	}
+		
+	public char getColumna() {
+			
+		return columna;
+			
+	}
+	
+	public String toString() {
+		
+		return "El rey se encuentra en la posición " + fila + " " + columna;
 		
 	}
-
+		
 }
