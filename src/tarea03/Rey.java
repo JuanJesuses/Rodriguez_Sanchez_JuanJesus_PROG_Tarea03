@@ -41,4 +41,10 @@ public class Rey {
 		
 	}
 	
+	public String toString() {
+		
+		return "El rey " + color + " se encuentra en la posición " + posicion;
+		
+	}
+	
 }

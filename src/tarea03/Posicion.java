@@ -102,13 +102,13 @@ public class Posicion {
 	}
 	
 	/**
-	 * Declaramos un metodo toString que devuelve las coordenadas donde se
-	 * encuentra el rey
+	 * Declaramos un metodo toString que devuelve las coordenadas
+	 * fila y columna
 	 */
 	
 	public String toString() {
 		
-		return "El rey se encuentra en la posición " + fila + " " + columna;
+		return "Las coordenadas son: " + fila + " " + columna;
 		
 	}
 		
