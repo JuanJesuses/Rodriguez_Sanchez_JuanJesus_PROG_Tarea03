@@ -129,7 +129,7 @@ public class Rey {
 				fila = posicion.getFila()-1;
 				numeroColumna = posicion.getColumna()-1;
 				if (fila < 1 ||  numeroColumna < 'a') {
-					System.out.println("No se puede mover el Rey hacia el Noroeste. Posción fuera de rango.");
+					System.out.println("No se puede mover el Rey hacia el Noroeste. Posición fuera de rango.");
 					fila = posicion.getFila()+1;
 					numeroColumna = posicion.getColumna()+1; 
 				}
