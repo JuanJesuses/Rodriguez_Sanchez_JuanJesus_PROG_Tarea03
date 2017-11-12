@@ -85,7 +85,7 @@ public class Rey {
 					System.out.println("No se puede mover el Rey hacia el Norte. Posición fuera de rango.");
 					posicion.setFila(numeroFila +1);
 				}
-				break;
+			break;
 				
 			case SUR:
 				
@@ -94,7 +94,7 @@ public class Rey {
 					System.out.println("No se puede mover el Rey hacia el Sur. Posición fuera de rango.");
 					posicion.setFila(numeroFila -1);
 				}
-				break;
+			break;
 				
 			case ESTE:
 				
@@ -103,7 +103,7 @@ public class Rey {
 					System.out.println("No se puede mover el Rey hacia el Este. Posición fuera de rango.");
 					posicion.setColumna((char)(numeroColumna -1));
 				}
-				break;
+			break;
 			
 			case OESTE:
 				
@@ -112,7 +112,7 @@ public class Rey {
 					System.out.println("No se puede mover el Rey hacia el Oeste. Posición fuera de rango.");
 					posicion.setColumna((char)(numeroColumna +1));
 				}
-				break;
+			break;
 				
 			case NORESTE:
 				
@@ -124,6 +124,7 @@ public class Rey {
 					posicion.setFila(numeroFila -1);
 					posicion.setColumna((char)(numeroColumna -1));
 				}
+			break;
 				
 			case NOROESTE:
 				
@@ -134,7 +135,8 @@ public class Rey {
 					posicion.setFila(numeroFila -1);
 					posicion.setColumna((char)(numeroColumna +1)); 
 				}
-			
+			break;
+				
 			case SURESTE:
 				
 				posicion.setFila(numeroFila -1);
@@ -144,7 +146,8 @@ public class Rey {
 					posicion.setFila(numeroFila +1);
 					posicion.setColumna((char)(numeroColumna -1));
 				}
-				
+			break;
+			
 			case SUROESTE:
 				
 				posicion.setFila(numeroFila -1);
@@ -154,6 +157,7 @@ public class Rey {
 					posicion.setFila(numeroFila +1);
 					posicion.setColumna((char)(numeroColumna +1));
 				}
+			break;
 		}//Fin del switch
 		
 	}//Fin del método mueve

@@ -97,7 +97,7 @@ public class Principal {
 					
 			}//Fin del switch
 						
-		}while (menu > 0 && menu < 3);
+		}while (menu != 3);
 			
 	}	
 
