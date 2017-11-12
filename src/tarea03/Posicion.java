@@ -23,8 +23,9 @@ public class Posicion {
 			
 		}else {
 			
-			System.out.printf("Error, ha introducido valores no válidos o fuera del rango");
-			System.out.printf("Se establecerá el valor \"1\" para la fila y el valor \"a\" para la columna.");
+			System.out.println("Error, ha introducido valores no válidos o fuera del rango. ");
+			System.out.println("");
+			System.out.println("Se establecerá el valor \"1\" para la fila y el valor \"a\" para la columna.");
 			this.fila = 1;
 			this.columna = 'a';
 			
@@ -49,8 +50,8 @@ public class Posicion {
 				
 		}else {
 				
-			System.out.printf("Error, ha introducido valores no válidos o fuera del rango");
-			System.out.printf("Se establecerá el valor \"1\".");
+			System.out.println("Error, ha introducido valores no válidos o fuera del rango.");
+			System.out.println("Se establecerá el valor \"1\".");
 			this.fila = 1;
 				
 		}
@@ -71,8 +72,8 @@ public class Posicion {
 				
 		}else {
 				
-			System.out.printf("Error, ha introducido valores no válidos o fuera del rango");
-			System.out.printf("Se establecerá el valor \"a\".");
+			System.out.println("Error, ha introducido valores no válidos o fuera del rango");
+			System.out.println("Se establecerá el valor \"a\".");
 			this.columna = 'a';
 				
 		}
@@ -108,7 +109,7 @@ public class Posicion {
 	
 	public String toString() {
 		
-		return "Las coordenadas son: " + fila + " " + columna;
+		return "las coordenadas: " + fila + " " + columna;
 		
 	}
 		

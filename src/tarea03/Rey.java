@@ -61,7 +61,7 @@ public class Rey {
 	 */
 	public String toString() {
 		
-		return "El rey " + color + " se encuentra en la posición " + posicion;
+		return "El rey " + color + " se encuentra en " + posicion;
 		
 	}
 	
@@ -73,85 +73,86 @@ public class Rey {
 	 */
 	public void mueve(Direccion direccion) {
 		
-		int fila = posicion.getFila();
+		int numeroFila = posicion.getFila();
 		int numeroColumna = posicion.getColumna();
 		
 		switch(direccion) {
 		
 			case NORTE:
 				
-				fila = posicion.getFila()-1;
-				if (fila < 1) {
+				posicion.setFila(numeroFila +1);
+				if (numeroFila > 8) {
 					System.out.println("No se puede mover el Rey hacia el Norte. Posición fuera de rango.");
-					fila = posicion.getFila()+1;
+					posicion.setFila(numeroFila +1);
 				}
 				break;
 				
 			case SUR:
 				
-				fila = posicion.getFila()+1;
-				if (fila > 8) {
+				posicion.setFila(numeroFila -1);
+				if (numeroFila < 1) {
 					System.out.println("No se puede mover el Rey hacia el Sur. Posición fuera de rango.");
-					fila = posicion.getFila()-1;
+					posicion.setFila(numeroFila -1);
 				}
 				break;
 				
 			case ESTE:
 				
-				numeroColumna = posicion.getColumna()+1;
+				posicion.setColumna((char)(numeroColumna +1));
 				if (numeroColumna > 'h') {
 					System.out.println("No se puede mover el Rey hacia el Este. Posición fuera de rango.");
-					numeroColumna = posicion.getColumna()-1;
+					posicion.setColumna((char)(numeroColumna -1));
 				}
 				break;
 			
 			case OESTE:
 				
-				numeroColumna = posicion.getColumna()-1;
+				posicion.setColumna((char)(numeroColumna -1));
 				if (numeroColumna < 'a') {
 					System.out.println("No se puede mover el Rey hacia el Oeste. Posición fuera de rango.");
-					numeroColumna = posicion.getColumna()+1;
+					posicion.setColumna((char)(numeroColumna +1));
 				}
 				break;
 				
 			case NORESTE:
 				
-				fila = posicion.getFila()-1;
-				numeroColumna = posicion.getColumna()+1;
-				if (fila < 1 || numeroColumna > 'h') {
+				posicion.setFila(numeroFila +1);
+				posicion.setColumna((char)(numeroColumna +1));
+				
+				if (numeroFila > 8 || (char)numeroColumna > 'h') {
 					System.out.println("No se puede mover el Rey hacia el Noreste. Posición fuera de rango.");
-					fila = posicion.getFila()+1;
-					numeroColumna = posicion.getColumna()-1;
+					posicion.setFila(numeroFila -1);
+					posicion.setColumna((char)(numeroColumna -1));
 				}
 				
 			case NOROESTE:
 				
-				fila = posicion.getFila()-1;
-				numeroColumna = posicion.getColumna()-1;
-				if (fila < 1 ||  numeroColumna < 'a') {
+				posicion.setFila(numeroFila +1);
+				posicion.setColumna((char)(numeroColumna -1));
+				if (numeroFila > 8 ||  numeroColumna < 'a') {
 					System.out.println("No se puede mover el Rey hacia el Noroeste. Posición fuera de rango.");
-					fila = posicion.getFila()+1;
-					numeroColumna = posicion.getColumna()+1; 
+					posicion.setFila(numeroFila -1);
+					posicion.setColumna((char)(numeroColumna +1)); 
 				}
 			
 			case SURESTE:
 				
-				fila = posicion.getFila()+1;
-				numeroColumna = posicion.getColumna()+1;
-				if (fila > 8 || numeroColumna > 'h') {
+				posicion.setFila(numeroFila -1);
+				posicion.setColumna((char)(numeroColumna +1));
+				if (numeroFila < 1 || numeroColumna > 'h') {
 					System.out.println("No se puede mover el Rey hacia el Sureste. Posición fuera de rango.");
-					fila = posicion.getFila()-1;
-					numeroColumna = posicion.getColumna()-1;
+					posicion.setFila(numeroFila +1);
+					posicion.setColumna((char)(numeroColumna -1));
 				}
 				
 			case SUROESTE:
 				
-				fila = posicion.getFila()+1;
-				numeroColumna = posicion.getColumna()-1;
-				if(fila > 8 || numeroColumna < 'a') {
+				posicion.setFila(numeroFila -1);
+				posicion.setColumna((char)(numeroColumna -1));
+				if(numeroFila < 1 || numeroColumna < 'a') {
 					System.out.println("No se puede mover el Rey hacia el Suroeste. Posición fuera de rango.");
-					fila = posicion.getFila()-1;
-					numeroColumna = posicion.getColumna()+1;
+					posicion.setFila(numeroFila +1);
+					posicion.setColumna((char)(numeroColumna +1));
 				}
 		}//Fin del switch
 		
