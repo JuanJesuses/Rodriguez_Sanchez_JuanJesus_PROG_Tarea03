@@ -36,8 +36,8 @@ public class Posicion {
 	 */
 	
 	/**
-	 * Creamos el metodo setFila y comprobamos que el dato 
-	 * pasado por paramtero se encuentra en el rango 1 - 8
+	 * Creamos el método setFila y comprobamos que el dato 
+	 * pasado por parámtero se encuentra en el rango 1 - 8
 	 * @param fila
 	 */
 		
@@ -58,14 +58,14 @@ public class Posicion {
 	}
 	
 	/**
-	 * Creamos el metodo setColumna y comprobamos que el dato
-	 * pasado por parametro se encuentra entre el rango 'a'-'h'
+	 * Creamos el método setColumna y comprobamos que el dato
+	 * pasado por párametro se encuentra entre el rango 'a'-'h'
 	 * @param columna
 	 */
 		
 	public void setColumna(char columna) {
 		
-		if (columna >= 97 && columna <= 104) {
+		if (columna >= 'a' && columna <= 'h') {
 				
 			this.columna = columna;
 				
@@ -80,7 +80,7 @@ public class Posicion {
 	}
 	
 	/**
-	 * Se declara el metodo getFila 
+	 * Se declara el método getFila 
 	 * @return fila
 	 */
 	
@@ -91,7 +91,7 @@ public class Posicion {
 	}
 	
 	/**
-	 * Se declara el metodo getColumna
+	 * Se declara el método getColumna
 	 * @return
 	 */
 		
@@ -102,7 +102,7 @@ public class Posicion {
 	}
 	
 	/**
-	 * Declaramos un metodo toString que devuelve las coordenadas
+	 * Declaramos un método toString que devuelve las coordenadas
 	 * fila y columna
 	 */
 	

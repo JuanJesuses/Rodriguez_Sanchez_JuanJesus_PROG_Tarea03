@@ -6,6 +6,6 @@ package tarea03;
 
 public enum Color {
 
-	BLANCO, NEGRO;
+	BLANCO, NEGRO
 	
 }

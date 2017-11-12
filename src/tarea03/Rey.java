@@ -23,7 +23,6 @@ public class Rey {
 			case NEGRO:
 				posicion = new Posicion(8, 'e');
 				break;
-				
 		}			
 	}
 	
@@ -35,7 +34,7 @@ public class Rey {
 	}
 	
 	/**
-	 * El metodo getColor devuelve una variable de tipo Color
+	 * El método getColor devuelve una variable de tipo Color
 	 * que indica el color del objeto
 	 * @return color
 	 */
@@ -46,8 +45,8 @@ public class Rey {
 	}
 	
 	/**
-	 * El metodo getPosicion devuelve una variable de tipo Posicion
-	 * que determina la posicion del objeto
+	 * El método getPosicion devuelve una variable de tipo Posicion
+	 * que determina la posición del objeto
 	 * @return posicion
 	 */
 	public Posicion getPosicion() {
@@ -57,7 +56,7 @@ public class Rey {
 	}
 	
 	/**
-	 * Este metodo toString devuelve una cadena 
+	 * Este método toString devuelve una cadena 
 	 * que representa el objeto
 	 */
 	public String toString() {
@@ -68,22 +67,93 @@ public class Rey {
 	
 	
 	/**
-	 * El metodo mueve actualiza la posicion del objeto a traves de los parametros
+	 * El método mueve actualiza la posición del objeto a través de los parámetros
 	 * @param fila
 	 * @param columna
 	 */
-	public void mueve(int fila, char columna) {
+	public void mueve(Direccion direccion) {
 		
-		while((fila < 1 || fila > 8) && (columna < 97 || columna > 104)) {
+		int fila = posicion.getFila();
+		int numeroColumna = posicion.getColumna();
 		
-			System.out.println("Los parámetros introducidos están fuera del rango establecido.");
-			System.out.println("El valor para la fila debe estar comprendido entre 1 y 8.");
-			System.out.println("El valor para la columna debe estar comprendido entre \'a' y \'h'.");
+		switch(direccion) {
+		
+			case NORTE:
+				
+				fila = posicion.getFila()-1;
+				if (fila < 1) {
+					System.out.println("No se puede mover el Rey hacia el Norte. Posición fuera de rango.");
+					fila = posicion.getFila()+1;
+				}
+				break;
+				
+			case SUR:
+				
+				fila = posicion.getFila()+1;
+				if (fila > 8) {
+					System.out.println("No se puede mover el Rey hacia el Sur. Posición fuera de rango.");
+					fila = posicion.getFila()-1;
+				}
+				break;
+				
+			case ESTE:
+				
+				numeroColumna = posicion.getColumna()+1;
+				if (numeroColumna > 'h') {
+					System.out.println("No se puede mover el Rey hacia el Este. Posición fuera de rango.");
+					numeroColumna = posicion.getColumna()-1;
+				}
+				break;
 			
-		}
+			case OESTE:
+				
+				numeroColumna = posicion.getColumna()-1;
+				if (numeroColumna < 'a') {
+					System.out.println("No se puede mover el Rey hacia el Oeste. Posición fuera de rango.");
+					numeroColumna = posicion.getColumna()+1;
+				}
+				break;
+				
+			case NORESTE:
+				
+				fila = posicion.getFila()-1;
+				numeroColumna = posicion.getColumna()+1;
+				if (fila < 1 || numeroColumna > 'h') {
+					System.out.println("No se puede mover el Rey hacia el Noreste. Posición fuera de rango.");
+					fila = posicion.getFila()+1;
+					numeroColumna = posicion.getColumna()-1;
+				}
+				
+			case NOROESTE:
+				
+				fila = posicion.getFila()-1;
+				numeroColumna = posicion.getColumna()-1;
+				if (fila < 1 ||  numeroColumna < 'a') {
+					System.out.println("No se puede mover el Rey hacia el Noroeste. Posción fuera de rango.");
+					fila = posicion.getFila()+1;
+					numeroColumna = posicion.getColumna()+1; 
+				}
+			
+			case SURESTE:
+				
+				fila = posicion.getFila()+1;
+				numeroColumna = posicion.getColumna()+1;
+				if (fila > 8 || numeroColumna > 'h') {
+					System.out.println("No se puede mover el Rey hacia el Sureste. Posición fuera de rango.");
+					fila = posicion.getFila()-1;
+					numeroColumna = posicion.getColumna()-1;
+				}
+				
+			case SUROESTE:
+				
+				fila = posicion.getFila()+1;
+				numeroColumna = posicion.getColumna()-1;
+				if(fila > 8 || numeroColumna < 'a') {
+					System.out.println("No se puede mover el Rey hacia el Suroeste. Posición fuera de rango.");
+					fila = posicion.getFila()-1;
+					numeroColumna = posicion.getColumna()+1;
+				}
+		}//Fin del switch
 		
-		posicion = new Posicion(fila, columna);
-		
-	}
-	
-}
+	}//Fin del método mueve
+}//Fin de la clase Rey
