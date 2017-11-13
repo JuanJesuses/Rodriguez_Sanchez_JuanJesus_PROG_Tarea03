@@ -79,83 +79,79 @@ public class Rey {
 		switch(direccion) {
 		
 			case NORTE:
-				
-				posicion.setFila(numeroFila +1);
+								
 				if (numeroFila > 8) {
 					System.out.println("No se puede mover el Rey hacia el Norte. Posición fuera de rango.");
+				}else {
 					posicion.setFila(numeroFila +1);
 				}
 			break;
 				
 			case SUR:
-				
-				posicion.setFila(numeroFila -1);
+								
 				if (numeroFila < 1) {
-					System.out.println("No se puede mover el Rey hacia el Sur. Posición fuera de rango.");
+					System.out.println("No se puede mover el Rey hacia el Sur. Posición fuera de rango.");	
+				}else {
 					posicion.setFila(numeroFila -1);
 				}
 			break;
 				
 			case ESTE:
-				
-				posicion.setColumna((char)(numeroColumna +1));
+								
 				if (numeroColumna > 'h') {
 					System.out.println("No se puede mover el Rey hacia el Este. Posición fuera de rango.");
-					posicion.setColumna((char)(numeroColumna -1));
+				}else {
+					posicion.setColumna((char)(numeroColumna +1));
 				}
 			break;
 			
+			
 			case OESTE:
 				
-				posicion.setColumna((char)(numeroColumna -1));
 				if (numeroColumna < 'a') {
 					System.out.println("No se puede mover el Rey hacia el Oeste. Posición fuera de rango.");
-					posicion.setColumna((char)(numeroColumna +1));
+				}else {
+					posicion.setColumna((char)(numeroColumna -1));
 				}
 			break;
 				
 			case NORESTE:
-				
-				posicion.setFila(numeroFila +1);
-				posicion.setColumna((char)(numeroColumna +1));
-				
+								
 				if (numeroFila > 8 || (char)numeroColumna > 'h') {
 					System.out.println("No se puede mover el Rey hacia el Noreste. Posición fuera de rango.");
-					posicion.setFila(numeroFila -1);
-					posicion.setColumna((char)(numeroColumna -1));
+				}else {
+					posicion.setFila(numeroFila +1);
+					posicion.setColumna((char)(numeroColumna +1));
 				}
 			break;
 				
 			case NOROESTE:
-				
-				posicion.setFila(numeroFila +1);
-				posicion.setColumna((char)(numeroColumna -1));
+								
 				if (numeroFila > 8 ||  numeroColumna < 'a') {
 					System.out.println("No se puede mover el Rey hacia el Noroeste. Posición fuera de rango.");
-					posicion.setFila(numeroFila -1);
-					posicion.setColumna((char)(numeroColumna +1)); 
-				}
-			break;
-				
-			case SURESTE:
-				
-				posicion.setFila(numeroFila -1);
-				posicion.setColumna((char)(numeroColumna +1));
-				if (numeroFila < 1 || numeroColumna > 'h') {
-					System.out.println("No se puede mover el Rey hacia el Sureste. Posición fuera de rango.");
+				}else {
 					posicion.setFila(numeroFila +1);
 					posicion.setColumna((char)(numeroColumna -1));
 				}
 			break;
+				
+			case SURESTE:
+								
+				if (numeroFila < 1 || numeroColumna > 'h') {
+					System.out.println("No se puede mover el Rey hacia el Sureste. Posición fuera de rango.");
+				}else {
+					posicion.setFila(numeroFila -1);
+					posicion.setColumna((char)(numeroColumna +1));
+				}
+			break;
 			
 			case SUROESTE:
-				
-				posicion.setFila(numeroFila -1);
-				posicion.setColumna((char)(numeroColumna -1));
+								
 				if(numeroFila < 1 || numeroColumna < 'a') {
 					System.out.println("No se puede mover el Rey hacia el Suroeste. Posición fuera de rango.");
-					posicion.setFila(numeroFila +1);
-					posicion.setColumna((char)(numeroColumna +1));
+				}else {
+					posicion.setFila(numeroFila -1);
+					posicion.setColumna((char)(numeroColumna -1));
 				}
 			break;
 		}//Fin del switch

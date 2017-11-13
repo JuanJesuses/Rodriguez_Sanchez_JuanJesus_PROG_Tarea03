@@ -7,11 +7,9 @@ public class Principal {
 	public static void main(String[] args) {
 		
 		char color;
-		Rey rey;
+		Rey rey = null;
 		int menu = 0;
 		int celda;
-		
-				
 		
 		do {
 			
@@ -26,7 +24,7 @@ public class Principal {
 		
 			if(color == 'b') {
 				rey = new Rey(Color.BLANCO);
-			}else {
+			}else if(color == 'n'){
 				rey = new Rey(Color.NEGRO);
 			}
 				
